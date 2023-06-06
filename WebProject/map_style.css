@@ -1,0 +1,494 @@
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		
+		#map {
+			width: 100%;
+			height: 100%;
+		}
+		
+		.grid-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: grid;
+			box-sizing: border-box;
+			grid-template-columns: 20fr 60fr 20fr;
+			grid-template-rows: 20fr 45fr 1fr 29fr 5fr;
+			grid-column-gap: 1px;
+			grid-row-gap: 1px;
+		}
+		
+		.grid-item {
+			padding: 0;
+		}
+		
+		search {
+			grid-row: 1;
+			grid-column: 1;
+			text-align: center;
+			z-index: 1;
+			display: grid;
+			grid-template-rows: 65fr 35fr;
+			grid-template-columns: 80fr 10fr 10fr;
+		}
+		
+		.main-box {
+			grid-row: 1;
+			grid-column: 1 / span 3;
+			margin-top: 30px;
+			margin-left: 10%;
+			cursor: pointer;
+			max-width: 90%;
+			height: auto;
+			object-fit: contain;
+			z-index: 1;
+		}
+		
+		.main-image {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		
+		
+		.addressBox {
+			grid-row: 2;
+			grid-column: 1;
+			margin-top: 0%;
+			margin-left: 13%;
+			max-width: 79%;
+			height: 8%;
+			z-index: 1;
+		}
+		
+		.addressBox input {
+			width: 100%;
+			height: 100%;
+			padding: 4%;
+			object-fit: contain;
+		}
+		
+		.searchButtonBox {
+			grid-row: 2;
+			grid-column: 2;
+			margin-top: 0%;
+			margin-left: 0;
+			max-width: 100%;
+			height: auto;
+			z-index: 1;
+		}
+		
+		.searchButtonBox input {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			object-fit: contain;
+		}
+		
+		.search-Icon {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		
+		.geolocation_container {
+			grid-row: 2;
+			grid-column: 3;
+			margin-top: 0%;
+			margin-left: 0;
+			max-width: 100%;
+			height: auto;
+			z-index: 1;
+		}
+		
+		.geolocation_button {
+			cursor: pointer;
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+		}
+		
+		.geolocationImg {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		
+		.container {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translate(0, -50%);
+			padding: 10px;
+			z-index: 1;
+		}
+		
+		.button {
+			display: inline-block;
+			padding: 0px 0px;
+			background: #fff;
+			color: #000;
+			border: 2px solid #000;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			margin: 0;
+		}
+		
+		.left-side {
+			grid-row: 2;
+			grid-column:1;
+		}
+		
+		aside {
+			margin-top: 5px;
+			margin-left: 1%;
+			grid-area: aside;
+			text-align: center;
+			z-index: 1;
+		}
+		
+		.download-box {
+			margin-top: 55%;
+			cursor: pointer;
+			max-width: 25%;
+			height: auto;
+			z-index: 1;
+		}
+		
+		.download-link {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			object-fit: contain;
+			display: inline-block;
+		}
+		
+		.download-image {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		
+		.area-box {
+			max-width: 25%;
+			height: auto;
+			z-index: 1;
+			cursor: pointer;
+		}
+		
+		.area-link {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			object-fit: contain;
+			display: inline-block;
+		}
+		
+		.area-image {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		
+		.contact-box {
+			max-width: 25%;
+			height: auto;
+			z-index: 1;
+			overflow: hidden;
+		}
+		
+		.contact-text {
+			display: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.contact-image {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		
+		.data-box {
+			grid-row: 2;
+			grid-column:3;
+		}
+		
+		
+		Data-Box {
+			margin: 0;
+			grid-area: Data-Box;
+			text-align: center;
+			z-index: 1;
+		}
+		
+		.up_box {
+		
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			display: none;
+			background-color: #fff;
+			padding-right: 0;
+			padding-bottom: 0;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			border-top-left-radius: 10px;
+  			border-bottom-left-radius: 10px;
+		}
+		
+		.up_box h1 {
+			position: relative;
+			font-size: 1vw;
+			font-weight: bold;
+			top: 5%;
+			left: 3%;
+			margin: 0;
+			z-index: 2;
+			text-align: left;
+		}
+		
+		.questionBox {
+			max-width: 9%;
+			max-height:5.5%;
+			background-color: lightgray;
+			margin-top: 10%;
+			margin-left: 85%; 
+			padding: 0;
+			z-index: 2;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		.questionIcon{
+			width: 80%;
+			height: auto;
+			object-fit: contain;
+		}
+		
+		.PieChart {
+			position: relative;
+			top: 0;
+			left: 1.5%;
+			max-width: 80%;
+			max-height: 50%;
+			object-fit: contain;
+			margin: 0;
+			padding: 0;
+			z-index: 2;
+		}
+		
+		.slider-wrapper {
+
+			position: relative;
+			top: 2%;
+			left: 1.5%;
+			max-width: 80%;
+			max-height: 15%;
+			object-fit: contain;
+			margin: 0 auto;
+			padding: 0;
+			z-index: 2;
+		}
+		
+		.slider {
+			-webkit-appearance: none;
+			width: 100%;
+			height: 8px;
+			border-radius: 5px;
+			background: linear-gradient(to right, #FF0000 0%, #ED7D31 16.6%, #FFC000 33.3%, #F8E00A 50%, #66EB27 66.6%, #36FDCD 83.3%, #EAEAEA 100%);
+			outline: none;
+			position: relative;
+		}
+		
+		.slider::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 0;
+			height: 0;
+			background: black;
+			cursor: pointer;
+			position: relative;
+			z-index: 2;
+			border-radius: 5px;
+			margin-top: -1px;
+		}
+			
+		.slider::-moz-range-thumb {
+			width: 0;
+			height: 0;
+			background: black;
+			cursor: pointer;
+			position: relative;
+			z-index: 2;
+			border-radius: 5px;
+			margin-top: -1px;
+		}
+			
+		.slider:before {
+			content: "";
+			position: relative;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: calc((100% / 7) * 0.5);
+			background: #FF0000;
+			z-index: 1;
+		}
+			
+		.slider:after {
+			content: "";
+			position: relative;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: calc((100% / 7) * 0.5);
+			background: #EAEAEA;
+			z-index: 1;
+		}
+			
+		.slider-label {
+			position: relative;
+			margin-top: 10px;
+			display: flex;
+			justify-content: space-between;
+		}
+			
+		.slider-label span {
+			font-size: 12px;
+		}
+		
+		.yearSelect {
+			position: relative;
+			top: 8%;
+		}
+ 		
+		.backbutton {
+			position: relative;
+			top: -30%;
+			left: 0;
+			max-width: 8%;
+			max-height: 10%;
+			object-fit: contain;
+			margin: 0;
+			padding: 0;
+			display: none;
+			z-index: 2;
+		}
+		
+		.backbutton_image {
+			display: inline-block;
+			padding: 0px 0px;
+			background: #fff;
+			color: #000;
+			font-size: 16px;
+			cursor: pointer;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			border-top-left-radius: 5px;
+  			border-bottom-left-radius: 5px;
+		}
+		
+		.sub-data-box {
+			grid-row: 4;
+			grid-column:3;
+		}
+		
+		Sub-Data-Box {
+			margin: 0;
+			grid-area: Sub-Data-Box;
+			text-align: center;
+			z-index: 1;
+		}
+		
+		.down_box {
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			display: none;
+			background-color: #fff;
+			padding-right: 0;
+			padding-top: 0;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			border-top-left-radius: 10px;
+  			border-bottom-left-radius: 10px;
+		}
+		
+		.down_box h1 {
+			position: relative;
+			font-size: 0.9vw;
+			font-weight: bold;
+			color: red;
+			top: 3%;
+			margin: 0;
+			z-index: 2;
+		}
+		
+		.location1 {
+			position: relative;
+			top: 10%;
+			width: 50%;
+			height: 15%;
+			font-size: 0.8vw;
+			display: inline-block;
+			background-color: lightgray;
+			margin: 0;
+			padding: 0;
+			z-index: 2;
+			border-radius: 5px;
+		}
+		
+		.location2 {
+			position: relative;
+			top: 13%;
+			width: 50%;
+			height: 15%;
+			font-size: 0.8vw;
+			display: inline-block;
+			background-color: lightgray;
+			margin: 0;
+			padding: 0;
+			z-index: 2;
+			border-radius: 5px;
+		}
+		
+		.location3 {
+			position: relative;
+			top: 16%;
+			width: 50%;
+			height: 15%;
+			font-size: 0.8vw;
+			display: inline-block;
+			background-color: lightgray;
+			margin: 0;
+			padding: 0;
+			z-index: 2;
+			border-radius: 5px;
+		}
+		
+		.bottomLink {
+			position: absolute;
+			top: 90%;
+			right: 5%;
+			width: 10%;
+			height: auto;
+			object-fit: contain;
+			margin: 0;
+			padding: 0;
+			z-index: 2;
+		}
+		
+		.bottomLink img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+

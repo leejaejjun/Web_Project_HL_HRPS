@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>산업재해 위험 경보 서비스</title>
+	<link rel="stylesheet" href="index_style.css" />
+	<script src="index_script.js"></script>
+</head>
+
+<body>
+	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b516b2591db78002003ce4b79a88777d"></script>
+	<script src="script.js"></script>
+	<header>
+		<h1>산업재해 위험 경보 서비스</h1>
+	</header>
+
+	<aside class="left">
+		<div>
+			<a href="media/Manual.pdf" download>
+				<img src="media/manual.png" alt="다운로드" />
+			</a>
+		</div>
+
+		<div>
+			<img src="media/area.png" alt="관할구역 찾기"
+				onclick="openURL('https://www.kosha.or.kr/kosha/popup/jurisdiction_popup.do')" />
+		</div>
+
+		<div>
+			<img id="contact-box" src="media/Call1.png" onclick="showCallnumber()" />
+		</div>
+	</aside>
+
+	<main>
+		<occupational-accident-box>
+			<h2>
+				년도별 산업재해 발생
+			</h2>
+			<select id="year">
+				<option name="year" value='2014' selected>2014년</option>
+				<option name="year" value='2015'>2015년</option>
+				<option name="year" value='2016'>2016년</option>
+				<option name="year" value='2017'>2017년</option>
+				<option name="year" value='2018'>2018년</option>
+				<option name="year" value='2019'>2019년</option>
+				<option name="year" value='2020'>2020년</option>
+				<option name="year" value='2021'>2021년</option>
+			</select>
+			<button onclick="print_occupational_Data()">확인</button>
+			<div id="occupational-accident">
+				년도를 선택해주세요
+			</div>
+		</occupational-accident-box>
+
+		<fatalities-by-industry>
+			<h2>
+				지역별 산업재해 현황
+			</h2>
+			<div id="area-accident"></div>
+		</fatalities-by-industry>
+
+		<risk-of-occurrence>
+			<h2 class="title">지역별 산업재해 발생 위험도</h2>
+
+			<h2>
+				매우 높음 <br />
+				<a href="map.html"><input type="submit" value="지역1" /></a><br />
+				<a href="map.html"><input type="submit" value="지역2" /></a><br />
+				<a href="map.html"><input type="submit" value="지역3" /></a>
+			</h2>
+			<h2>
+				높음 <br />
+				<a href="map.html"><input type="submit" value="지역4" /></a><br />
+				<a href="map.html"><input type="submit" value="지역5" /></a><br />
+				<a href="map.html"><input type="submit" value="지역6" /></a>
+			</h2>
+
+			<h2>
+				주의 <br />
+				<a href="map.html"><input type="submit" value="지역7" /></a><br />
+				<a href="map.html"><input type="submit" value="지역8" /></a><br />
+				<a href="map.html"><input type="submit" value="지역9" /></a>
+			</h2>
+		</risk-of-occurrence>
+
+		<rist-risk-of-occurrence>
+			<select id="locationSelect">
+				<option name="locationSelect" value="Seoul">서울</option>
+				<option name="locationSelect" value="Gyeonggi">경기</option>
+				<option name="locationSelect" value="Gangwon">강원</option>
+				<option name="locationSelect" value="Cheongchung">충청</option>
+				<option name="locationSelect" value="Gyeongsang">경상</option>
+				<option name="locationSelect" value="Jeolla">전라</option>
+			</select>
+
+			<button onclick="moveMap()">이동</button>
+
+			<div id="map"></div>
+		</rist-risk-of-occurrence>
+
+
+	</main>
+
+	<footer>
+		<p>
+			"Copyright © PKNU. All right reserved. "
+		</p>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>산업재해 위험 경고 시스템</title>
+		<link rel="stylesheet" href="map_style.css" />
+	</head>
+	<body>
+	<div id="map" style="width:100%; height:100vh; padding: 0; margin: 0;"></div>
+		<div class="grid-container">
+			<search>
+				<div class="main-box" onclick="goToIndexHtml()">
+					<img class="main-image" src="media/mainLink.png" />
+				</div>
+
+				<div class="addressBox"> 
+					<input
+						type="text"
+						id="addressInput"
+						placeholder="주소를 입력하세요"
+						onkeydown="checkEnterKey(event)"
+					/>
+				</div>
+
+				<div class="searchButtonBox">
+					<button id="searchButton" onclick="toggleSearchButton()">
+						<img class="search-Icon" src="media/search.png" alt="검색" />
+					</button>
+				</div>
+
+				<div class="geolocation_container">
+					<button class="geolocation_button" id="locationBtn">
+						<img class="geolocationImg" src="media/current-location.png" alt="현재 위치로 이동" />
+					</button>
+				</div>
+			</search>
+			
+			<aside class="left-side">
+				<div class="download-box">
+					<a class="download-link" href="media/Manual.pdf" download>
+						<img class="download-image" src="media/manual.png" alt="다운로드" />
+					</a>
+				</div>
+
+				<div class="area-box">
+					<img
+						class="area-image"
+						src="media/area.png"
+						alt="관할구역 찾기"
+						onclick="openURL('https://www.kosha.or.kr/kosha/popup/jurisdiction_popup.do')"
+					/>
+				</div>
+
+				<div class="contact-box" onclick="showCallnumber()">
+					<img class="contact-image" src="media/Call1.png" />
+				</div>
+			</aside>
+			
+			<Data-Box class="data-box">
+				<div class="container">
+					<img class="button" src="media/sideBar.png" alt="위험도 표시" />
+				</div>
+				<div class="up_box">
+					<h1>위험도 분포</h1>
+					<div class="questionBox" onclick="showRiskLevel()">
+						<img class=questionIcon src=media/question.png alt="위험도 구분">
+					</div>
+					<img class="PieChart" src="media/PieChart.png" />
+					<div class="slider-wrapper">
+						<input type="range" min="1" max="7" value="1" class="slider" id="mySlider" />
+						<div class="slider-label">
+							<span>매우 높음</span>
+							<span>평균</span>
+							<span>매우 낮음</span>
+						</div>
+					</div>
+
+					<div class="yearSelect">
+						<select id="year">
+							<option name="year" value='2014' selected>2021년</option>
+							<option name="year" value='2015'>2020년</option>
+							<option name="year" value='2016'>2019년</option>
+							<option name="year" value='2017'>2018년</option>
+							<option name="year" value='2018'>2017년</option>
+							<option name="year" value='2019'>2016년</option>
+							<option name="year" value='2020'>2015년</option>
+							<option name="year" value='2021'>2014년</option>
+						</select>
+						<button onclick="showAreaByYear(document.getElementById('year').value)">확인</button>
+					</div>
+					<div class="backbutton">
+						<img class="backbutton_image" src="media/backbutton_icon.png" alt="접기" />
+					</div>
+				</div>
+			</Data-Box>
+
+			<Sub-Data-Box class="sub-data-box">
+				<div class="down_box">
+					<h1>현재 주의 지역</h1>
+					<button class="location1" onclick="setCenter(33.452613, 126.570888)">안산</button>
+					<button class="location2" onclick="setCenter(38.452613, 120.570888)">대구</button>
+					<button class="location3" onclick="setCenter(35.37321001117972, 127.14541368726769)">
+						대전
+					</button>
+					<a class="bottomLink" href="https://www.comwel.or.kr/comwel/main.jsp" target="_blank">
+						<img src="media/Call2.png" alt="근로 복지 공단" />
+					</a>
+				</div>	
+			</Sub-Data-Box>
+
+		</div>
+		<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=36604e83563ff62abb036d7475bf087a&libraries=services,clusterer,drawing"></script>
+		<script src="script.js"></script>
+		<script src="map_script.js"></script>
+	</body>
+</html>
+

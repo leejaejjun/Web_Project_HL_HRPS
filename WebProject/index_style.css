@@ -1,0 +1,147 @@
+/* Add your custom styles below */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	grid-template-columns: 1fr 14fr 1fr;
+	grid-template-rows: 1fr 10fr 0.5fr;
+	grid-template-areas:
+		'header header header'
+		'aside main aside_left'
+		'footer footer footer';
+
+}
+
+header {
+	grid-area: header;
+	text-align: center;
+}
+
+aside {
+	margin-top: 5px;
+	grid-area: aside;
+	text-align: center;
+}
+
+aside img {
+	width: 100px;
+	max-width: 100%;
+	height: auto;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	text-align: center;
+	grid-area: main;
+	overflow: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	}
+  
+}
+
+occupational-accident-box {
+	background: skyblue;
+	margin: 5px;
+	text-align: center;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+fatalities-by-industry {
+	background: skyblue;
+	margin: 5px;
+	text-align: center;
+
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+risk-of-occurrence {
+	background: skyblue;
+	margin: 5px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		'title title title'
+		'list list list';
+}
+
+.title {
+	grid-area: title;
+	text-align: center;
+	position: relative;
+}
+
+rist-risk-of-occurrence {
+	background: skyblue;
+	margin: 5px;
+	text-align: center;
+}
+
+
+/*일단 진짜 대충 보기 편하게 만들어 높은 css*/
+#area-accident {
+	position: relative;
+	max-height: 300px;
+	max-width: 500px;
+	overflow: auto;
+	margin: 5px;
+}
+
+table {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+	font-size: 10px;
+	overflow: auto;
+}
+
+thead th {
+	background-color: white;
+	font-weight: bold;
+	padding: 8px;
+	text-align: center;
+	border: 1px solid white;
+}
+
+tbody th {
+	font-weight: bold;
+	padding: 8px;
+	text-align: center;
+	border: 1px solid white;
+}
+
+tbody td {
+	padding: 8px;
+	text-align: center;
+	border: 1px solid white;
+}
+
+#map {
+	position: relative;
+	height: 50vh;
+	margin: 5px;
+}
+
+footer {
+	text-size-adjust: 10px;
+	text-align: center;
+	grid-area: footer;
+}
